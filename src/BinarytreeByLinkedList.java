@@ -47,6 +47,14 @@ public class BinarytreeByLinkedList {
         System.out.print(node.getValue() + " ");
         preOrder(node.getLeft());
         preOrder(node.getRight());
-    }//end of method
+    }
+    void inOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getLeft());
+        System.out.print(node.getValue() + " ");
+        inOrder(node.getRight());
+    }
 
 }

@@ -8,6 +8,7 @@ public class BinarytreeByLinkedListMain {
             obj.insert(i*10);
         }
         obj.preOrder(obj.root);
+        obj.inOrder(obj.root);
 
     }
 }
