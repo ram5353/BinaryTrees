@@ -21,16 +21,17 @@ public class BinarytreeByLinkedList {
         }
 
         Queue<BinaryNode> queue = new LinkedList<>();
-        queue.add(node);
+        queue.add(root);
         while (!queue.isEmpty()) {
             BinaryNode presentNode = queue.remove();
             if (presentNode.getLeft() == null) {
                 presentNode.setLeft(node);
-                System.out.println("left");
+                System.out.println("left" + node.getValue());
+                System.out.println(node.getLeft());
                 break;
             } else if (presentNode.getRight() == null) {
                 presentNode.setRight(node);
-                System.out.println("right");
+                System.out.println("right" + node.getValue());
                 break;
             } else {
                  queue.add(presentNode.getLeft());
@@ -38,5 +39,14 @@ public class BinarytreeByLinkedList {
             }
         }
     }
+
+    void preOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.getValue() + " ");
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+    }//end of method
 
 }

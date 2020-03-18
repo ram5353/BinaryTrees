@@ -7,6 +7,7 @@ public class BinarytreeByLinkedListMain {
         for (int i=0;i<=10;i++) {
             obj.insert(i*10);
         }
+        obj.preOrder(obj.root);
 
     }
 }
