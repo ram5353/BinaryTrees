@@ -9,6 +9,7 @@ public class BinarytreeByLinkedListMain {
         }
         obj.preOrder(obj.root);
         obj.inOrder(obj.root);
+        obj.postOrder(obj.root);
 
     }
 }
