@@ -77,11 +77,24 @@ public class BinarytreeByLinkedList {
                 queue.add(present.getRight());
             }
         }
-
-
-
-
     }
 
-
+    void search(int value) {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            if (presentNode.getValue() == value) {
+                System.out.println("Found the value = " + presentNode.getValue());
+                return;
+            } else {
+                if (presentNode.getLeft()!=null) {
+                    queue.add(presentNode.getLeft());
+                }
+                if (presentNode.getRight()!=null)
+                    queue.add(presentNode.getRight());
+            }
+        }
+        System.out.println("Value not found");
+    }
 }

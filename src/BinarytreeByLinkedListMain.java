@@ -16,6 +16,7 @@ public class BinarytreeByLinkedListMain {
         System.out.println("PostOrder Traversal");
         obj.levelOrder();
         System.out.println("levelOrder Traversal");
+        obj.search(30);
 
     }
 }
