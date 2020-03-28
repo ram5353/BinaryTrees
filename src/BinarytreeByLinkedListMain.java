@@ -7,9 +7,15 @@ public class BinarytreeByLinkedListMain {
         for (int i=0;i<=10;i++) {
             obj.insert(i*10);
         }
+
         obj.preOrder(obj.root);
+        System.out.println("PreOrder Traversal");
         obj.inOrder(obj.root);
+        System.out.println("inOrder Traversal");
         obj.postOrder(obj.root);
+        System.out.println("PostOrder Traversal");
+        obj.levelOrder();
+        System.out.println("levelOrder Traversal");
 
     }
 }

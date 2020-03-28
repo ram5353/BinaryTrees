@@ -1,6 +1,3 @@
-import com.sun.source.tree.Tree;
-
-import java.lang.reflect.Array;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -65,6 +62,25 @@ public class BinarytreeByLinkedList {
         inOrder(node.getLeft());
         inOrder(node.getRight());
         System.out.print(node.getValue() + " ");
+    }
+
+    void levelOrder() {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode present = queue.remove();
+            System.out.print(present.getValue() + " ");
+            if (present.getLeft() != null) {
+                queue.add(present.getLeft());
+            }
+            if (present.getRight() != null) {
+                queue.add(present.getRight());
+            }
+        }
+
+
+
+
     }
 
 
