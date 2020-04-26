@@ -77,11 +77,35 @@ public class BinarytreeByLinkedList {
                 queue.add(present.getRight());
             }
         }
-
-
-
-
     }
 
+    void serach(int value) {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode present = queue.remove();
+            if (present.getValue() == value) {
+                System.out.println("found the value");
+                return;
+            } else {
+                if (present.getLeft() != null) {
+                    if (present.getLeft().getValue() == value) {
+                        System.out.println("found the value");
+                        return;
+                    }
+                    queue.add(present.getLeft());
+                }
+                if (present.getRight() != null) {
+                    if (present.getRight().getValue() == value) {
+                        System.out.println("found the value");
+                        return;
+                    }
+                    queue.add(present.getRight());
+                }
+            }
+        }
+        System.out.println("Value not found");
+
+    }
 
 }
