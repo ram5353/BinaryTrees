@@ -5,7 +5,7 @@ public class BinarySearchTreeByLinkedList {
 
     BinaryNode root;
 
-    public BinarySearchTreeByLinkedList(BinaryNode root) {
+    public BinarySearchTreeByLinkedList() {
         this.root = null;
     }
 
@@ -17,6 +17,25 @@ public class BinarySearchTreeByLinkedList {
         BinaryNode node = new BinaryNode();
         node.setValue(value);
         return node;
+    }
+
+    public void insert(int value) {
+        root = insert(root, value);
+    }
+
+    public BinaryNode insert(BinaryNode currentNode, int value) {
+        if (currentNode == null) {
+            System.out.println("Successfully inserted");
+            return createNewNode(value);
+        }
+        else if (value < currentNode.getValue()) {
+            currentNode.setLeft(insert(currentNode.getLeft(), value));
+            return currentNode;
+        }
+        else {
+            currentNode.setRight(insert(currentNode.getRight(), value));
+            return currentNode;
+        }
     }
 
     public void searchValue(int value) {
